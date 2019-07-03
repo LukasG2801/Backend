@@ -1,0 +1,22 @@
+{
+
+    "manualTitle": "Legohaus bauen",
+    "manualInstructions": [
+        {
+            "instructionTitle": "Dach bauen", 
+            "instructionVisualization": "", 
+            "instructionDescription": "Lorem ipsum dolor sit amet..."
+        },
+        {
+            "instructionTitle": "Mauer bauen", 
+            "instructionVisualization": "", 
+            "instructionDescription": "Lorem ipsum dolor sit amet..."
+        },
+        {
+            "instructionTitle": "Dach und Mauer zusammensetzen", 
+            "instructionVisualization": "", 
+            "instructionDescription": "Lorem ipsum dolor sit amet..."
+        }
+
+]
+}
