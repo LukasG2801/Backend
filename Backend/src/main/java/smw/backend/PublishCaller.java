@@ -16,8 +16,30 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
  */
 public class PublishCaller {
         
-    public static void nextStep(){
+    public static void publish(String p_message) throws MqttException{
+        String password = "Smart/WB";
+        String username = "smart-workbench";
         
+        MqttClient client = new MqttClient("ssl://mqtt.iot-embedded.de:8883", MqttClient.generateClientId());
+        
+        
+        
+        MqttConnectOptions connOpts = new MqttConnectOptions();
+        connOpts.setCleanSession(true);
+        
+
+         connOpts.setUserName(username);
+        
+         connOpts.setPassword(password.toCharArray());
+        
+         client.connect(connOpts);
+        
+        
+        MqttMessage message = new MqttMessage(p_message.getBytes());
+        message.setQos(0);
+        client.publish("/smw/", message);
+        
+        client.disconnect();
     }
 
 }

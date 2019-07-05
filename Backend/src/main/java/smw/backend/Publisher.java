@@ -40,7 +40,7 @@ public class Publisher implements Runnable{
         connOpts.setPassword(PASSWORD.toCharArray());
         client.connect(connOpts);
         MqttMessage message = new MqttMessage(p_message.getBytes());
-        message.setQos(0);
+        message.setQos(2);
         client.publish(p_topic, message);
         
         client.disconnect();

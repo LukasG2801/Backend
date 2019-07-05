@@ -19,7 +19,7 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 public class Subscriber implements Runnable {
     private static final String USERNAME = "smart-workbench";
     private static final String PASSWORD = "Smart/WB";
-    private static final String TOPIC = "smw/backend/40:A3:CC:98:91:17/pir/";
+    private static final String TOPIC = "smw/workbench_1/pi_1/pir";
     
     //Wird ausgeführt sobald der Thread gestartet wird
     @Override

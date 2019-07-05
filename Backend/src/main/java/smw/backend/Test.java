@@ -21,7 +21,7 @@ import org.json.simple.parser.ParseException;
 public class Test {
     public static void main(String[] args) throws MqttException{
         Publisher publisher = new Publisher();
-        Publisher.publish("test von Lukas", "smw/backend/40:A3:CC:98:91:17/pir/");
+        Publisher.publish("test", "/smw/backend/40:A3:CC:98:91:17/pir/");
     }
     
     public static void publish(String p_test) throws MqttException{
