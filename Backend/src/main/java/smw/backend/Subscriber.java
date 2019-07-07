@@ -1,29 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package smw.backend;
 
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.eclipse.paho.client.mqttv3.*;
-import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 /**
+ * Klasse Subscriber dient hauptsächlich dazu, alle Nachrichten 
+ * aufzuzeichnen die über das Topic smw/ und alle Untertopics gesendet werden 
  * @author giesler
  * Date: 15.06.2019
  */
-public class Subscriber implements Runnable {
+public class Subscriber{
     private static final String USERNAME = "smart-workbench";
     private static final String PASSWORD = "Smart/WB";
-    private static final String TOPIC = "smw/workbench_1/pi_1/pir";
+    private static final String TOPIC = "smw/#";
+    public static boolean flag_1;
     
-    //Wird ausgeführt sobald der Thread gestartet wird
-    @Override
-    public void run(){
+    
+    public static void main(String[] args){
         System.out.println("Status: Subscriber onlinee");
         try {
             MqttClient client = new MqttClient("ssl://mqtt.iot-embedded.de:8883", MqttClient.generateClientId());
@@ -40,7 +34,7 @@ public class Subscriber implements Runnable {
                 //Messages entgegen nehmen und verarbeiten
                 @Override
                 public void messageArrived(String t, MqttMessage m) throws Exception {
-                    System.out.print("Message arrived @ " + TOPIC + " ");
+                    System.out.print("Message arrived @ " + t + " ");
                     System.out.println(new String(m.getPayload()));
                     
                 }
